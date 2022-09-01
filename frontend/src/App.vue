@@ -12,8 +12,8 @@
                   <td class="menu">
                       <router-link class="router" to="/">Início</router-link>
                       <router-link class="router" to="/about">Sobre</router-link>
-                      <router-link class="router" to="/login">Login</router-link>
-                      <router-link class="router" to="/panel">Painel</router-link>
+                      <router-link class="router" to="/login" v-if="this.$store.state.userData == null">Login</router-link>
+                      <router-link class="router" to="/panel" v-else>Painel</router-link>
                   </td>
               </tr>
           </table>
