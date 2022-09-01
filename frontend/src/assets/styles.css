@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    font-size: 2vh;
+}
+
+.router {
+  margin-left: 3%;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: #000000;
+  font-size: 2vh;
+}
+
+table {
+  width: 100%;
+}
+
+.menu {
+  text-align: end;
+  color: #ffffff;
+  padding-right: 15vw;
+}
+
+.logo img {
+  width: 10%;
+  height: auto;
+  margin-left: 5%;
+}
+
+.nav {
+  padding: 0.5%;
+  background-color: #4d4d4d;
+}
+
+.nav a {
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav a.router-link-exact-active {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.nav a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
