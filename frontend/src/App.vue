@@ -12,6 +12,8 @@
                   <td class="menu">
                       <router-link class="router" to="/">Início</router-link>
                       <router-link class="router" to="/about">Sobre</router-link>
+                      <router-link class="router" to="/login">Login</router-link>
+                      <router-link class="router" to="/panel">Painel</router-link>
                   </td>
               </tr>
           </table>

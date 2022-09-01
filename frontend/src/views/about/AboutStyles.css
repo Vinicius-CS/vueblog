@@ -1,0 +1,11 @@
+.about .title {
+    font-size: 5vh;
+    font-weight: bold;
+    text-align: center;
+}
+
+.about .content {
+    text-align: justify;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}

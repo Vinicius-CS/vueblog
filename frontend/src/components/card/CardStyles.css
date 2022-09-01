@@ -1,0 +1,41 @@
+.card {
+    box-shadow: 0 1vw 2vw 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 100%;
+    text-align: left;
+    margin: 1vw;
+}
+
+.card:hover {
+    box-shadow: 0 1.3vw 2vw 0 rgba(0, 0, 0, 0.3);
+}
+
+.card .container {
+    padding: 2%;
+}
+
+.card img {
+    width: 100%;
+    height: 45%;
+}
+
+.card .publish {
+    color: #a1a1a1;
+    font-size: 1.5vh;
+}
+
+.card .title {
+    font-weight: bold;
+    font-size: 3vh;
+}
+
+.card .infos {
+    display: inline-flex;
+    color: #a1a1a1;
+    font-size: 1.5vh;
+}
+
+.card .description {
+    height: 20%;
+    max-height: 20%;
+}
