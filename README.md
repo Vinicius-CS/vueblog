@@ -1,8 +1,22 @@
-<p align="center">
-  <img src="https://i.imgur.com/5JJRkfW.png" alt="Vue Blog Logo"/>
-</p>
+<div align="center">
+  <img src="https://i.imgur.com/qsT0jUk.png" height="100" alt="Vue Blog Logo"/>
+</div>
 
-Projeto de blog com frontend em Vue 3 e Vuetify para estilização e backend em Python e Django.
+<hr>
+
+<div align="center">
+  <img alt="Vinicius-Vue" src="https://img.shields.io/badge/Vue.js-323330?style=for-the-badge&logo=vue.js&logoColor=FFF">
+  <img alt="Vinicius-Vuetify" src="https://img.shields.io/badge/Vuetify-323330?style=for-the-badge&logo=vuetify&logoColor=FFF">
+  <img alt="Vinicius-HTML" src="https://img.shields.io/badge/HTML-323330?style=for-the-badge&logo=html5&logoColor=FFF">
+  <img alt="Vinicius-CSS" src="https://img.shields.io/badge/CSS-323330?&style=for-the-badge&logo=css3&logoColor=FFF">
+  <img alt="Vinicius-Js" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=FFF">
+  <img alt="Vinicius-Python" src="https://img.shields.io/badge/Python-323330?style=for-the-badge&logo=python&logoColor=FFF">
+  <img alt="Vinicius-Django" src="https://img.shields.io/badge/Django-323330?style=for-the-badge&logo=django&logoColor=FFF">
+  <img alt="Vinicius-MySQL" src="https://img.shields.io/badge/MySQL-323330?style=for-the-badge&logo=mysql&logoColor=FFF">
+</div>
+
+Projeto de blog com frontend em Vue 3 e Vuetify 3 para estilização e backend em Python 3 e Django.
+Para o banco de dados, foi utilizado o MySQL.
 
 <hr>
 
@@ -11,8 +25,9 @@ Execute os comandos abaixo na pasta [backend](https://github.com/Vinicius-CS/vue
 
 Instale as bibliotecas do Python utilizadas no projeto:
 - `pip install djangorestframework`
-- `pip install pymysql`
 - `pip install django-cors-headers`
+- `pip install pymysql`
+- `pip install hashlib`
 
 Execute as migrations para criar a estrutura do banco de dados:
 - `python manage.py makemigrations blog`
