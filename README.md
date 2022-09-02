@@ -16,7 +16,7 @@
 </div>
 
 Projeto de blog com frontend em Vue 3 e Vuetify 3 para estilização e backend em Python 3 e Django.
-Para o banco de dados, foi utilizado o MySQL, o diagrama e a SQL se encontram na pasta [documentos](https://github.com/Vinicius-CS/vueblog/tree/main/documentos), bem como as considerações do projeto.
+Para o banco de dados, foi utilizado o MySQL, o diagrama e a SQL com as tabelas populadas se encontram na pasta [documentos](https://github.com/Vinicius-CS/vueblog/tree/main/documentos), bem como as considerações do projeto.
 
 <hr>
 
