@@ -50,7 +50,7 @@ def UserRegisterApi(request):
                 user_serializer = LoginSerializer(user, many = True)
 
                 return JsonResponse(user_serializer.data, status = status.HTTP_201_CREATED, safe = False) 
-            return JsonResponse(register_serealizer.errors, status = status.HTTP_400_BAD_REQUEST, safe = False)
+            return JsonResponse("Failed Register", status = status.HTTP_204_NO_CONTENT, safe = False)
         return JsonResponse("Failed Request", status = status.HTTP_400_BAD_REQUEST, safe = False)
     return JsonResponse("Failed Method", status = status.HTTP_405_METHOD_NOT_ALLOWED, safe = False)
 
