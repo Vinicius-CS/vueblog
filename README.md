@@ -39,7 +39,7 @@ Crie um banco de dados chamado `vueblog`, se você utilizar outro nome para a da
 Execute as migrations para criar as tabelas no banco de dados:
 - `python manage.py makemigrations blog`
 
-Passe para o [próximo passo](https://github.com/Vinicius-CS/vueblog/edit/main/README.md#frontend) se você já importou a SQL.
+Passe para o próximo passo se você já importou a SQL.
 - `python manage.py migrate blog`
 
 ## Frontend
