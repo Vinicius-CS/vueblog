@@ -12,8 +12,9 @@
                   <td class="menu">
                       <router-link class="router" to="/">Início</router-link>
                       <router-link class="router" to="/about">Sobre</router-link>
-                      <router-link class="router" to="/login" v-if="this.$store.state.userData == null">Login</router-link>
-                      <router-link class="router" to="/panel" v-else>Painel</router-link>
+                      <router-link class="router" to="/login" v-if="this.$store.state.userData.id == null">Login</router-link>
+                      <router-link class="router" to="/panel" v-else-if="this.$store.state.userData.role > 1">Painel</router-link>
+                      <a class="exit" :onclick="onClickHandlerEvent" v-else>Sair</a>
                   </td>
               </tr>
           </table>
@@ -28,14 +29,16 @@
 </style>
 
 <script>
+  import router from '@/router';
+
   export default {
     name: "App",
-    
-    data: () => ({
-    //
-    }),
 
-    components: {
+    methods: {
+      onClickHandlerEvent() {
+        this.$store.commit('removeUserData');
+        router.push('/');
+      }
     }
   }
 </script>

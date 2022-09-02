@@ -12,14 +12,36 @@ loadFonts()
 const store = createStore({
     state () {
         return {
-            userData: Cookies.get('userData.name'),
+            userData: {
+                id          : Cookies.get('userData.id'),
+                name        : Cookies.get('userData.name'),
+                last_name   : Cookies.get('userData.last_name'),
+                email       : Cookies.get('userData.email'),
+                role        : Cookies.get('userData.role')
+            },
         }
     },
 
     mutations: {
         setUserData (state, payload) {
-            state.userData = payload.value;
+            state.userData[payload.key] = payload.value;
             Cookies.set(`userData.${payload.key}`, payload.value, { expires: 3 });
+        },
+
+        removeUserData (state) {
+            state.userData = {
+                id          : undefined,
+                name        : undefined,
+                last_name   : undefined,
+                email       : undefined,
+                role        : undefined
+            };
+
+            Cookies.remove('userData.id'),
+            Cookies.remove('userData.name'),
+            Cookies.remove('userData.last_name'),
+            Cookies.remove('userData.email'),
+            Cookies.remove('userData.role')
         }
     }
 })

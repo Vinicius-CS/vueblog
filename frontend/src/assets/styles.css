@@ -3,7 +3,7 @@ body {
     font-size: 2vh;
 }
 
-.router {
+.router, .exit {
   margin-left: 3%;
 }
 
@@ -48,4 +48,5 @@ table {
 .nav a:hover {
   color: #ffffff;
   text-decoration: underline;
+  cursor: pointer;
 }
