@@ -8,7 +8,7 @@
       </div>
     </div>
 
-    <div class="text-center" v-if="this.article.length > 0">
+    <div class="text-center" v-if="this.article[0].length > 0">
       <v-container>
         <v-row justify="center">
           <v-col cols="10">
@@ -23,6 +23,9 @@
           </v-col>
         </v-row>
       </v-container>
+    </div>
+    <div class="text-center" v-else>
+      <br><p>Nenhum artigo publicado...</p>
     </div>
   </div>
 </template>
