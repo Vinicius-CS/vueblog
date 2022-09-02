@@ -39,7 +39,7 @@
             axios.get(`${Config.api_baseurl}/article/${this.$route.params.id}`).then(response => {
                 this.response = response.data[0];
             }).catch(err => {
-                console.log(err.response);
+                if (err.response != undefined) console.log(err.response);
             });
         }
     }

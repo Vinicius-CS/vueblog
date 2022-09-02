@@ -80,7 +80,7 @@
         });
 
       }).catch(err => {
-        console.log(err.response);
+        if (err.response != undefined) console.log(err.response);
       });
     },
   }

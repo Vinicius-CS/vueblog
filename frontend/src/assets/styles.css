@@ -61,10 +61,22 @@ table {
 .footer {
   position: absolute;
   bottom: -10%;
+  padding: 1vh;
   height: 10vh;
   width: 100%;
   background-color: #4d4d4d;
   text-align: center;
   font-weight: bold;
   color: #ffffff;
+}
+
+.footer img {
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  transition: all 500ms;
+}
+
+.footer img:hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }
