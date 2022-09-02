@@ -63,4 +63,4 @@ Execute o comando abaixo para iniciar o servidor de backend:
 <br>
 
 # Configurações Opcionais
-Você pode configurar a quantidade de artigos exibidos por página e a URL base da API em [config.json](https://github.com/Vinicius-CS/vueblog/blob/main/frontend/src/assets/config.json).
+Você pode configurar a quantidade de artigos exibidos por página e a URL base da API em [config.json](https://github.com/Vinicius-CS/vueblog/blob/main/frontend/src/assets/config.json), certifique-se de manter o `/api`.
