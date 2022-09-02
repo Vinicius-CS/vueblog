@@ -1,0 +1,21 @@
+.register {
+    height: 100%;
+}
+
+.register .title {
+    font-size: 5vh;
+    font-weight: bold;
+    text-align: center;
+}
+
+.register .content {
+    text-align: justify;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+.register .form {
+    padding-top: 2vw;
+    padding-left: 30vw;
+    padding-right: 30vw;
+}

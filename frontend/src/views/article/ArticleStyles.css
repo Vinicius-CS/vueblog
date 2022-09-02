@@ -1,17 +1,27 @@
+.article .body {
+    word-break: keep-all;
+    text-align: justify;
+    padding-left: 15vw;
+    padding-right: 15vw;
+}
+
 .article .title {
     font-size: 5vh;
     font-weight: bold;
     text-align: center;
 }
 
-.article .content {
-    word-break: break-all;
-    text-align: justify;
-    padding-left: 15vw;
-    padding-right: 15vw;
+.article .description {
+    padding-top: 2%;
 }
 
 .article .infos {
     padding-top: 2%;
+    padding-bottom: 2%;
     font-size: 1.5vh;
+}
+
+.article .content {
+    padding-top: 2%;
+    padding-bottom: 5%;
 }

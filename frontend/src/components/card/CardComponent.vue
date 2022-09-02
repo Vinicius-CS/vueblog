@@ -33,14 +33,14 @@
     export default {
         name: 'CardComponent',
         props: {
-            id: Number,
-            title: String,
-            thumbnail: String,
-            description: String,
-            category: String,
-            tags: String,
-            publish: String,
-            author: String
+            id          : Number,
+            title       : String,
+            thumbnail   : String,
+            description : String,
+            category    : String,
+            tags        : String,
+            publish     : String,
+            author      : String
         }
     }
 </script>

@@ -1,11 +1,11 @@
 <template>
     <div class="article">
-      <div class="content">
+      <div class="body">
         <p class="title">{{ response.title }}</p>
         <p class="description">{{ response.description }}</p>
-        <p class="infos">Publicado por <b>{{ response.author }}</b> em <b>{{ formatDate(response.publish) }}</b>.</p>
+        <p class="infos">Publicado por <b>{{ response.author }}</b> em <b>{{ formatDate(response.publish) }}</b><br><b>Categoria:</b> {{ response.category }}  | <b>Tags:</b> {{ response.tags }}</p>
         <hr/>
-        <span v-html="response.content"></span>
+        <div class="content" v-html="response.content"></div>
       </div>
     </div>
 </template>
@@ -15,16 +15,15 @@
 </style>
 
 <script>
+    import Config from '@/assets/config.json'
     import moment from 'moment'
-
-    import ArticleData from '@/responses/article/ArticleData.json'
 
     export default {
         name: 'ArticleView',
 
         data () {
             return {
-                response: ArticleData
+                response: {}
             };
         },
 
@@ -35,7 +34,13 @@
         },
 
         mounted() {
-            this.response = ArticleData[`article_${this.$route.params.id}`];
+            const axios = require('axios').default;
+
+            axios.get(`${Config.api_baseurl}/article/${this.$route.params.id}`).then(response => {
+                this.response = response.data[0];
+            }).catch(err => {
+                console.log(err.response);
+            });
         }
     }
 </script>

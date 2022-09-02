@@ -20,6 +20,9 @@
           </table>
       </nav>
       <router-view/>
+      <footer class="footer">
+        <br>{{ new Date().getFullYear() == 2022 ? new Date().getFullYear() : '2022 - ' + new Date().getFullYear() }} | Blog
+      </footer>
     </v-main>
   </v-app>
 </template>
