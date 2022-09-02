@@ -31,7 +31,7 @@ Instale as bibliotecas do Python utilizadas no projeto:
 
 Execute as migrations para criar a estrutura do banco de dados:
 - `python manage.py makemigrations blog`
-- `python manage.py migrate blog`
+- `python manage.py migrate blog` (Não é execute este comando se a [SQL](https://github.com/Vinicius-CS/vueblog/blob/main/documentos/vueblog.sql) que está na pasta [documentos](https://github.com/Vinicius-CS/vueblog/tree/main/documentos) for executada)
 
 Execute o comando abaixo para iniciar o servidor de backend:
 - `python manage.py runserver localhost:8000`
@@ -44,3 +44,6 @@ Execute o comando abaixo para instalar as dependências do projeto:
 
 Execute o comando abaixo para iniciar o servidor de frontend:
 - `npm run serve`
+
+## Configurações Opcionais
+Você pode configurar a quantidade de artigos exibidos por página e a URL base da API em [config.json](https://github.com/Vinicius-CS/vueblog/blob/main/frontend/src/assets/config.json).
