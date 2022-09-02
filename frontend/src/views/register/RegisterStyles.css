@@ -19,3 +19,17 @@
     padding-left: 30vw;
     padding-right: 30vw;
 }
+
+.register .alert {
+    width: 100%;
+    position: relative;
+}
+
+.register .alert .content {
+    position: relative;
+    margin: 0.5vw;
+    padding: 1%;
+    max-width: 50vw;
+    left: 50%;
+    transform: translate(-50%, 0);
+}

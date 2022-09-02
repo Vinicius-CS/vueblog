@@ -3,6 +3,9 @@
     <div class="content">
       <p class="title">Registre-se</p>
       <hr/>
+      <div class="alert">
+        <v-alert class="content" type="error" v-if="errorMessage != null">{{ errorMessage }}</v-alert>
+      </div>
       <v-form
         ref="form"
         v-model="valid"
@@ -13,6 +16,7 @@
           v-model="name"
           :rules="nameRules"
           label="Nome"
+          :onkeyup="errorMessage = null"
           required
         ></v-text-field>
 
@@ -20,6 +24,7 @@
           v-model="last_name"
           :rules="lastnameRules"
           label="Sobrenome"
+          :onkeyup="errorMessage = null"
           required
         ></v-text-field>
 
@@ -27,6 +32,7 @@
           v-model="email"
           :rules="emailRules"
           label="E-mail"
+          :onkeyup="errorMessage = null"
           required
         ></v-text-field>
 
@@ -35,6 +41,7 @@
           :rules="passwordRules"
           type="password"
           label="Senha"
+          :onkeyup="errorMessage = null"
           required
         ></v-text-field>
 
@@ -69,13 +76,14 @@
 
   export default {
     data: () => ({
-      valid     : true,
-      userdata  : null,
+      valid         : true,
+      userdata      : null,
+      errorMessage  : null,
 
-      name      : '',
-      last_name : '',
-      email     : '',
-      password  : '',
+      name          : '',
+      last_name     : '',
+      email         : '',
+      password      : '',
 
       nameRules: [
         v => !!v || 'Preencha este campo.'
@@ -97,7 +105,16 @@
         const axios = require('axios').default;
 
         axios.post(`${Config.api_baseurl}/register`, {name: this.name, last_name: this.last_name, email: this.email, password: this.password, role: 1}).then(response => {
-          console.log(response.data);
+          switch (response.status) {
+            case 204:
+              this.errorMessage = 'E-mail em uso';
+              break;
+          
+            default:
+              this.errorMessage = null;
+              break;
+          }
+
           this.$store.commit('setUserData', {key: 'id', value: response.data[0].id});
           this.$store.commit('setUserData', {key: 'name', value: response.data[0].name});
           this.$store.commit('setUserData', {key: 'last_name', value: response.data[0].last_name});
@@ -106,7 +123,10 @@
 
           router.push('/');
         }).catch(err => {
-          console.log(err.response);
+          if (err.response != undefined) {
+            this.errorMessage = 'Ocorreu um erro ao registrar-se, tente novamente mais tarde';
+            console.log(err.response);
+          }
         });
       }
     },

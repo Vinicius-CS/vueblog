@@ -3,6 +3,9 @@
     <div class="content">
       <p class="title">Login</p>
       <hr/>
+      <div class="alert">
+        <v-alert class="content" type="error" v-if="errorMessage != null">{{ errorMessage }}</v-alert>
+      </div>
       <v-form
         ref="form"
         v-model="valid"
@@ -13,6 +16,7 @@
           v-model="email"
           :rules="emailRules"
           label="E-mail"
+          :onkeyup="errorMessage = null"
           required
         ></v-text-field>
 
@@ -21,6 +25,7 @@
           :rules="passwordRules"
           type="password"
           label="Senha"
+          :onkeyup="errorMessage = null"
           required
         ></v-text-field>
 
@@ -55,11 +60,12 @@
 
   export default {
     data: () => ({
-      valid     : true,
-      userdata  : null,
+      valid         : true,
+      userdata      : null,
+      errorMessage  : null,
 
-      email     : '',
-      password  : '',
+      email         : '',
+      password      : '',
 
       emailRules: [
         v => !!v || 'Preencha este campo.',
@@ -75,6 +81,16 @@
         const axios = require('axios').default;
 
         axios.post(`${Config.api_baseurl}/login`, {email: this.email, password: this.password}).then(response => {
+          switch (response.status) {
+            case 204:
+              this.errorMessage = 'E-mail ou senha inválidos';
+              break;
+          
+            default:
+              this.errorMessage = null;
+              break;
+          }
+
           this.$store.commit('setUserData', {key: 'id', value: response.data[0].id});
           this.$store.commit('setUserData', {key: 'name', value: response.data[0].name});
           this.$store.commit('setUserData', {key: 'last_name', value: response.data[0].last_name});
@@ -83,7 +99,10 @@
           
           router.push('/');
         }).catch(err => {
-          console.log(err.response);
+          if (err.response != undefined) {
+            this.errorMessage = 'Ocorreu um erro ao fazer login, tente novamente mais tarde';
+            console.log(err.response);
+          }
         });
       }
     },
