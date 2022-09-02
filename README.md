@@ -16,7 +16,7 @@
 </div>
 
 Projeto de blog com frontend em Vue 3 e Vuetify 3 para estilização e backend em Python 3 e Django.
-Para o banco de dados, foi utilizado o MySQL.
+Para o banco de dados, foi utilizado o MySQL, o diagrama e a SQL se encontram na pasta [documentos](https://github.com/Vinicius-CS/vueblog/tree/main/documentos), bem como as considerações do projeto.
 
 <hr>
 
@@ -31,7 +31,7 @@ Instale as bibliotecas do Python utilizadas no projeto:
 
 Execute as migrations para criar a estrutura do banco de dados:
 - `python manage.py makemigrations blog`
-- `python manage.py migrate blog` (Não é execute este comando se a [SQL](https://github.com/Vinicius-CS/vueblog/blob/main/documentos/vueblog.sql) que está na pasta [documentos](https://github.com/Vinicius-CS/vueblog/tree/main/documentos) for executada)
+- `python manage.py migrate blog` (Não execute este comando se a [SQL](https://github.com/Vinicius-CS/vueblog/blob/main/documentos/vueblog.sql) que está na pasta [documentos](https://github.com/Vinicius-CS/vueblog/tree/main/documentos) já estiver importada no banco de dados)
 
 Execute o comando abaixo para iniciar o servidor de backend:
 - `python manage.py runserver localhost:8000`
