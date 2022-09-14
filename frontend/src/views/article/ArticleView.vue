@@ -1,12 +1,12 @@
 <template>
     <div class="article">
-      <div class="body">
-        <p class="title">{{ response.title }}</p>
-        <p class="description">{{ response.description }}</p>
-        <p class="infos">Publicado por <b>{{ response.author }}</b> em <b>{{ formatDate(response.publish) }}</b><br><b>Categoria:</b> {{ response.category }}  | <b>Tags:</b> {{ response.tags }}</p>
-        <hr/>
-        <div class="content" v-html="response.content"></div>
-      </div>
+        <div class="body">
+            <p class="title">{{ response.title }}</p>
+            <p class="description">{{ response.description }}</p>
+            <p class="infos">Publicado por <b>{{ response.author }}</b> em <b>{{ formatDate(response.publish) }}</b><br><b>Categoria:</b> {{ response.category }}  | <b>Tags:</b> {{ response.tags }}</p>
+            <hr/>
+            <div class="content" v-html="response.content"></div>
+        </div>
     </div>
 </template>
 
