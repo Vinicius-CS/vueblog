@@ -15,7 +15,7 @@
         <v-text-field
           v-model="email"
           :rules="emailRules"
-          label="E-mail"
+          label="E-Mail"
           :onkeyup="errorMessage = null"
           required
         ></v-text-field>
